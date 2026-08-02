@@ -31,14 +31,40 @@ def load_quizzes(filename):
     
     return quiz_list
 
+def run_quiz(quiz_list):
+    score = 0  # 점수 초기화
+    
+    print(f"\n총 {len(quiz_list)}문제를 시작합니다!")
+    
+    for i, quiz in enumerate(quiz_list):
+        print(f"\n문제 {i+1}: {quiz.question}")
+        # 보기 출력
+        for idx, choice in enumerate(quiz.choices):
+            print(f"{idx+1}. {choice}")
+        
+        # 사용자 입력 받기
+        user_answer = input("정답 번호를 입력하세요: ")
+        
+        # 정답 확인 (JSON의 answer는 숫자이므로 문자열로 변환해 비교)
+        if user_answer == str(quiz.answer):
+            print("정답입니다! 🎉")
+            score += 1
+        else:
+            print(f"틀렸습니다. 😢 정답은 {quiz.answer}번입니다.")
+            
+    print(f"\n--- 게임 종료! ---")
+    print(f"당신의 최종 점수: {score} / {len(quiz_list)}")
+
+
+
 # [수정] 실행부: 기존의 연습용 코드를 지우고 아래 내용을 넣으세요
 if __name__ == "__main__":
     # 1. JSON 파일에서 문제 불러오기
     quizzes = load_quizzes('questions.json')
     
-    # 2. 잘 불러왔는지 확인 (테스트)
-    print(f"총 {len(quizzes)}개의 문제를 성공적으로 불러왔습니다!")
-
+    # 2. 문제가 정상적으로 로드되었는지 확인 후 게임 시작
     if quizzes:
-        print(f"첫 번째 문제: {quizzes[0].question}")
-        print(f"선택지: {quizzes[0].choices}")
+        print(f"총 {len(quizzes)}개의 문제를 성공적으로 불러왔습니다!")
+        run_quiz(quizzes)  # <--- 이 부분이 있어야 게임이 시작됩니다!
+    else:
+        print("문제를 불러오지 못했습니다. questions.json 파일을 확인해주세요.")
