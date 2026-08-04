@@ -74,6 +74,7 @@ Q2. 파이썬에서 리스트에 요소를 추가하는 함수는?
 ├── state.json           # 퀴즈 데이터 (문제, 선택지, 정답)
 ├── main.py              # 게임 실행 및 로직 담당 파이썬 파일
 └── README.md            # 프로젝트 설명 문서
+```
 
 ## 데이터 설명-states.json
 형식: JSON (JavaScript Object Notation)
