@@ -1,5 +1,6 @@
 import json
 import random
+import datetime
 
 class Quiz:
     def __init__(self, question, options, answer):
@@ -29,6 +30,16 @@ def load_quizzes(filename):
     except json.JSONDecodeError:
         print("❌ 에러: JSON 파일 형식이 잘못되었습니다.")
         return []
+
+# ... (기존 Quiz 클래스와 load_quizzes 함수) ...
+
+def save_score(name, score):
+    """플레이어의 기록을 파일에 저장합니다."""
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open("history.txt", "a", encoding="utf-8") as f:
+        f.write(f"[{now}] {name}: {score}점\n")
+    print(f"\n✅ {name}님의 기록이 저장되었습니다!")
+
 
 def play_game():
     quizzes = load_quizzes('state.json')
@@ -70,7 +81,9 @@ def play_game():
 
     print("-" * 30)
     print(f"결과: {total}문제 중 {score}문제를 맞혔습니다!")
-    print("게임을 종료합니다. 수고하셨습니다! 😊")
+    print("게임을 종료합니다. 수고하셨습니다! ")
+    player_name = input("기록을 남길 이름을 입력하세요: ")
+    save_score(player_name, score)
 
 if __name__ == "__main__":
     play_game()
