@@ -1,13 +1,15 @@
 import json
+import random
 
 class Quiz:
+    # 클래스는 한 문제의 정보를 담도록 설계합니다.
     def __init__(self, question, choices, answer):
         self.question = question
         self.choices = choices
         self.answer = answer
 
-    def check_answer(self, user_input):
-        return user_input == self.answer
+    def check_answer(self, user_ans):
+        return user_ans == self.answer
 
 def run_quiz():
     # 1. 파일에서 퀴즈 데이터 불러오기
@@ -18,10 +20,14 @@ def run_quiz():
         print("퀴즈 파일을 찾을 수 없습니다.")
         return
 
+    # 2. 데이터로부터 Quiz 객체 리스트 생성
     quizzes = [Quiz(q['question'], q['choices'], q['answer']) for q in data]
     
-    score = 0  # 맞힌 개수를 저장할 변수
-    total = len(quizzes) # 전체 문제 수
+    # [핵심!] 07단계: 문제 리스트를 랜덤하게 섞습니다.
+    random.shuffle(quizzes)
+    
+    score = 0 
+    total = len(quizzes)
 
     print("--- 퀴즈를 시작합니다! ---")
 
@@ -30,7 +36,6 @@ def run_quiz():
         for idx, choice in enumerate(quiz.choices, 1):
             print(f"{idx}. {choice}")
 
-        # 예외 처리 루프
         while True:
             try:
                 user_ans = int(input("정답 번호를 입력하세요 (1-4): "))
@@ -41,14 +46,12 @@ def run_quiz():
             except ValueError:
                 print("숫자만 입력 가능합니다.")
 
-        # 정답 확인 및 점수 계산
         if quiz.check_answer(user_ans):
             print("✅ 정답입니다!")
-            score += 1  # 정답일 때만 점수 추가
+            score += 1
         else:
             print(f"❌ 틀렸습니다. 정답은 {quiz.answer}번입니다.")
 
-    # 2. 최종 결과 화면 출력
     print("\n" + "="*30)
     print("      퀴즈 종료!      ")
     print(f"  최종 점수: {score} / {total}")
