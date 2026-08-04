@@ -69,10 +69,11 @@ score += 1: 사용자가 정답을 맞혔을 때만 점수를 1점씩 올립니�
 - JSON 데이터 로드 시 키(Key) 에러 방지 로직 추가
 
 ### 08단계 결과물
-<img width="534" height="814" alt="ss2" src="https://github.com/user-attachments/assets/68d0aff4-76f8-4334-a322-92405e83211c" />
 <img width="534" height="561" alt="ss1" src="https://github.com/user-attachments/assets/2cb259af-dbc8-42a7-852a-16226c7fdfbb" />
 
-![Uploading ss2.png…]()
+
+<img width="534" height="814" alt="ss2" src="https://github.com/user-attachments/assets/68d0aff4-76f8-4334-a322-92405e83211c" />
+
 
 <img width="534" height="195" alt="ss3" src="https://github.com/user-attachments/assets/52596929-c947-4581-b124-48d9efe64c65" />
 
