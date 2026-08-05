@@ -132,6 +132,16 @@ docs: 10단계 로드맵 전체 업데이트 (문서 작업)
 -import json추가: 맨 윗줄에 JSON기능을 쓰기 위해 추가 (JSON기능이란? 데이터와 코드를 분리하여 코드를 간단하게 유지할 수 있도록 함.)
 -load_quizzes 함수 정의: 파일에서 데이터를 가져오는 전용 함수를 만듦 (q1 = Quiz(...)라고 적어야 했던 것을 자동화함)
 -if __name__ == "__main__": 아래 정리: 이전 단계에서 print(q1.question)처럼 연습했던 코드들을 지우고 파일을 불러와서 확인하는 코드로 바꿈
+<img width="764" height="552" alt="03-1" src="https://github.com/user-attachments/assets/e9ec1317-9b6e-4f8c-b8f6-00c485f8328b" />
+<img width="764" height="578" alt="03-2" src="https://github.com/user-attachments/assets/bbf019d8-371f-4f4a-9c23-a4a5935b55d9" />
+<img width="764" height="502" alt="03-3" src="https://github.com/user-attachments/assets/68ef315b-e452-4b47-9346-b01472e1d8e6" />
+<img width="764" height="558" alt="03-4" src="https://github.com/user-attachments/assets/d34245e0-ea70-432a-8c3e-df19cd4dfbbf" />
+<img width="764" height="509" alt="03-5" src="https://github.com/user-attachments/assets/dfac1968-cee4-4388-97b6-c26e1277622c" />
+
+
+
+
+
 
 ## 04. 퀴즈 불러오기 및 출력 로직 구현
 -Step 04. 퀴즈 진행 엔진: JSON 데이터를 불러와 사용자에게 문제를 출제하고, 입력을 받아 정답 여부를 판별하는 핵심 로직 구현
@@ -205,45 +215,81 @@ score += 1: 사용자가 정답을 맞혔을 때만 점수를 1점씩 올립니�
 
 ## SUB Info
 1. 파이썬 기초 (Python Basics)
+
 변수 (Variable): 데이터를 담는 상자입니다. 데이터를 재사용하고, 이름(라벨)을 붙여서 관리하기 위해 사용
-자료형 (Data Types):
+
+<자료형 (Data Types)>
+ 
 int: 정수 (예: 1, 100)
+
 str: 문자열 (예: "안녕하세요")
+
 bool: 참/거짓 (True, False)
+
 list: 순서가 있는 데이터의 목록 (예: [1, 2, 3])
+
 dict: 키(Key)-값(Value) 쌍으로 이루어진 사전형 데이터 (예: {"이름": "홍길동"})
-제어문:
+
+<제어문>
+
 if/elif/else: 조건에 따라 길을 나누는 분기점
+
 for vs while: for는 정해진 횟수나 범위를 반복할 때, while은 특정 조건이 참인 동안 계속 반복할 때 사용
+
 함수 (Function): 반복되는 코드를 묶어놓은 것.
+
 매개변수(Parameter): 함수에 전달하는 입력값.
+
 반환값(Return): 함수가 실행된 후 내놓는 결과값.
 
 
 2. 클래스와 객체
+
 클래스 (Class): 객체를 만들기 위한 설계도. 비슷한 기능을 하는 변수와 함수를 하나로 묶기 위해 사용.
+
 객체 (Object): 설계도(클래스)를 통해 실제로 만들어진 실체.
+
 __init__ 메서드: 객체가 생성될 때 자동으로 호출되는 초기화 함수 (이름, 점수 등을 처음에 설정)
+
 self: **"객체 자기 자신"**을 가리킴 클래스 내부에서 자신의 속성이나 메서드에 접근할 때 사용
+
 속성(Attribute): 객체가 가진 상태/데이터 (예: 퀴즈의 문제 내용, 정답)
+
 메서드(Method): 객체가 할 수 있는 동작/함수 (예: 퀴즈 확인하기, 점수 계산하기)
+
 
 3. 파일 입출력 및 예외 처리
 파일 입출력: open()으로 파일을 열고, read()/write()로 내용을 읽거나 쓴 뒤, close()로 닫는 과정 (파이썬에서는 with문을 쓰면 자동으로 닫아줌)
+
 JSON: 데이터를 저장하는 표준 텍스트 형식. 딕셔너리 구조와 비슷해서 읽기 쉽고, 다른 언어와 데이터를 주고받을 때 유리
+
 try/except: 프로그램 실행 중 발생할 수 있는 에러를 가로채서 처리하는 장치. 프로그램이 갑자기 꺼지는 것을 방지
 
+
 4. Git 기초 (Version Control)
+
 Git: 코드의 변경 이력을 기록하는 버전 관리 시스템 과거로 되돌아가거나 협업할 때 필수
-주요 명령어:
+
+<주요 명령어>
+
 init: 새로운 Git 저장소 만들기(시작).
+
 add: 변경된 파일을 기록할 준비(장바구니에 담기).
+
 commit: 변경 사항을 확정하여 기록(사진 찍기).
+
 push: 로컬의 기록을 원격 저장소(GitHub)에 올리기.
+
 pull: 원격 저장소의 최신 내용을 내 컴퓨터로 가져오기.
+
 checkout: 다른 브랜치로 이동하기.
+
 clone: 원격 저장소를 내 컴퓨터로 통째로 복사해오기.
-브랜치(Branch) & 병합(Merge):
+
+<브랜치(Branch) & 병합(Merge)>
+
 브랜치: 원본 코드에 영향을 주지 않고 새로운 기능을 만들기 위한 복사된 작업 공간(가지).
+
 병합: 브랜치에서 만든 기능을 검토 후 메인 코드에 합치는 것.
+
 
