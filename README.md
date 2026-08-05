@@ -127,12 +127,15 @@ feat: Quiz 클래스 정의 (기능 구현)
 docs: 10단계 로드맵 전체 업데이트 (문서 작업)
 또한 mission2.py 파일이 없을 때 나는 에러를 확인함.
 
+
 ## 03. 퀴즈 데이터 구성
 -Step 03. 데이터 외부화 (JSON): 퀴즈 데이터를 코드 내에 두지 않고 state.json 파일로 분리했습니다. UTF-8 인코딩 처리를 통해 한글 깨짐 문제를 해결
 -import json추가: 맨 윗줄에 JSON기능을 쓰기 위해 추가 (JSON기능이란? 데이터와 코드를 분리하여 코드를 간단하게 유지할 수 있도록 함.)
--load_quizzes 함수 정의: 파일에서 데이터를 가져오는 전용 함수를 만듦 (q1 = Quiz(...)라고 적어야 했던 것을 자동화함)
+-load_quizzes 함수 정의: 파일에서 데이터를 가져오는 전용 함수를 만듦 (q1 = Quiz(...)라고 적어야 했던 것을 자동화함)/Users/jyunhui3210683/python_quiz/06
 -if __name__ == "__main__": 아래 정리: 이전 단계에서 print(q1.question)처럼 연습했던 코드들을 지우고 파일을 불러와서 확인하는 코드로 바꿈
-<img width="764" height="552" alt="03-1" src="https://github.com/user-attachments/assets/e9ec1317-9b6e-4f8c-b8f6-00c485f8328b" />
+
+
+<img width="590" height="509" alt="03-06" src="https://github.com/user-attachments/assets/bc1c979d-3c88-4e74-aa51-75c95dad9893" />
 <img width="764" height="578" alt="03-2" src="https://github.com/user-attachments/assets/bbf019d8-371f-4f4a-9c23-a4a5935b55d9" />
 <img width="764" height="502" alt="03-3" src="https://github.com/user-attachments/assets/68ef315b-e452-4b47-9346-b01472e1d8e6" />
 <img width="764" height="558" alt="03-4" src="https://github.com/user-attachments/assets/d34245e0-ea70-432a-8c3e-df19cd4dfbbf" />
